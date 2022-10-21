@@ -1,0 +1,25 @@
+{{template "userinterface/headeruser" .}}
+<h1>Produk Detail</h1>
+<br>
+
+<div class="card" style="width: 18rem;">
+	
+	<div class="card-body">
+	  <h5 class="card-title">{{.Product.Name}}</h5>
+	  <h6 class="card-subtitle mb-2 text-muted">Product Id: {{.Product.Id}}</h6>
+	  <p class="card-text">Quantity: {{.Product.Quantity}}</p>
+	  <p class="card-text">Price: {{.Product.Price}}</p>
+	  <td>
+		<img src="{{.Product.Image}}"
+		class="w-50" alt="Item" />
+	</td>
+	</div>
+</div>
+<br>
+<div>
+	<a href="/products" class="btn btn-primary">Back</a> &nbsp; 
+	<a href="/products/deleteproduct/{{.Product.Id}}" class="btn btn-danger">Hapus</a>  &nbsp; 
+	<a href="/products/editproduct/{{.Product.Id}}" class="btn btn-info">Edit</a>
+</div>
+
+{{template "userinterface/footeruser" .}}

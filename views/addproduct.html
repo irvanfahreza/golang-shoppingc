@@ -1,0 +1,26 @@
+{{template "userinterface/headeruser" .}}
+
+<h1>Tambah Produk</h1>
+<br>
+<form method="POST" action="/products/create">
+	<div class="mb-3">
+		<label for="name" class="form-label">Name</label>
+		<input type="text" class="form-control" name="name" id="name" placeholder="Nama">
+	</div>
+	<div class="mb-3">
+		<label for="name" class="form-label">Quantity</label>
+		<input type="number" class="form-control" name="quantity" id="quantity" placeholder="quantity">
+	</div>
+	<div class="mb-3">
+		<label for="price" class="form-label">Price</label>
+		<input type="number" step="0.01" class="form-control" name="price" id="price" placeholder="price">
+	</div>
+	<!-- <div class="mb-3">
+		<label for="image" class="form-label">Gambar</label>
+		<input class="form-control form-control-sm" id="formFileSm" type="file">
+	</div>			 -->
+	<input type="file" name="gambar" accept="image/gif, image/jpeg, image/png">
+	<button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+
+{{template "userinterface/footeruser" .}}

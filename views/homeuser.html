@@ -1,0 +1,39 @@
+{{template "userinterface/headeruser" .}}
+
+<h1>Daftar Produk</h1>
+<br>
+<a href="/products/create" class="btn btn-primary">Buat Produk</a>
+<div>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th scope="col">#</th>
+			<th scope="col">Nama Product</th>
+			<th scope="col">Quantity</th>
+			<th scope="col">Harga</th>
+			<th scope="col">Actions</th>
+		  </tr>
+		</thead>
+		<tbody>
+			{{range .Products}}
+			<tr>
+				<th scope="row">{{.Id}}</th>
+				<td>{{.Name}}</td>
+				<td>{{.Quantity}}</td>
+				<td>{{.Price}}</td>
+				<td>
+					<a href="/products/productdetail?id={{.Id}}" class="btn btn-outline-info">
+						Detail</a>
+					&nbsp;
+					<a href="/products/addproduct/{{.Id}}" class="btn btn-outline-info">
+							Masukkan Keranjang</a>
+				</td>
+			</tr>
+		  {{end}}
+		  
+		</tbody>
+	  </table>
+</div>
+<a href="/cart" class="btn btn-primary">Cart Produk</a>
+
+{{template "userinterface/footeruser" .}}

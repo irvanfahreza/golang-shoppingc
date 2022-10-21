@@ -1,0 +1,28 @@
+{{template "userinterface/headeruser" .}}
+
+<h1>Daftar Akun</h1>
+<br>
+<div>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+            <th scope="col">#</th>
+			<th scope="col">Username</th>
+			<th scope="col">Email</th>
+			<th scope="col">Password</th>
+		  </tr>
+		</thead>
+		<tbody>
+			{{range .Account}}
+			<tr>
+				<th scope="row">{{.Id}}</th>
+				<td>{{.Username}}</td>
+				<td>{{.Email}}</td>
+				<td>{{.Password}}</td>
+			</tr>
+		  	{{end}}
+		</tbody>
+	  </table>
+</div>
+
+{{template "userinterface/footeruser" .}}
